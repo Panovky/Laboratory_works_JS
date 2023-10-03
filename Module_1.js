@@ -23,19 +23,19 @@ function connectionError404() {
 let response = {
     status: "OK",
     errorCode: null
-}
+};
 
 /*
 
 let response = {
 status: "Failed",
 errorCode: 403
-}
+};
 
 let response = {
 status: "Failed",
 errorCode: 404
-}
+};
 
 */
 
