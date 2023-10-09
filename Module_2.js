@@ -1,5 +1,7 @@
 let words = [];
 
+/*
+
 let words = ["one", "two", "three", "+four", "=five", "%six", "$seven", "&eight", "/nine", "eleven"];
 
 let words = ["Alice", "Ostin", "Esme", "Olivia", "Isabella", "Ethan", "Eva", "Oskar", "Abigail", "Emma"];
