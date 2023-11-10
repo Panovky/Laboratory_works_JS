@@ -4,6 +4,6 @@ let array = [
     -620, 'бигль', -70, 'котейка', 51, 'снеговик', 80, 'воробей', 1050, 'Вера'
 ];
 
-let result = array.filter( item => typeof item == 'number' && item % 2 == 0 || typeof item == 'string' && item.length <= 4);
+let result = array.filter(item => typeof item == 'number' && item % 2 == 0 || typeof item == 'string' && item.length <= 4);
 
 console.log(`Отфильтрованный массив = [${result}]`);

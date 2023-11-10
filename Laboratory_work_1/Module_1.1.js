@@ -1,23 +1,23 @@
 function responseHandler(response) {
     if (response.status == "OK") {
-        console.log("Запрос выполнен успешно.");
+        return "Запрос выполнен успешно.";
     }
     else {
         if (response.errorCode == 403) {
-            connectionError403();
+            return connectionError403();
         }
         else {
-            connectionError404();
+            return connectionError404();
         }
     }
 }
 
 function connectionError403() {
-    console.log("Запрос не выполнен.\nКод ошибки: 403.");
+    return "Запрос не выполнен.\nКод ошибки: 403.";
 }
 
 function connectionError404() {
-    console.log("Запрос не выполнен.\nКод ошибки: 404.");
+    return "Запрос не выполнен.\nКод ошибки: 404.";
 }
 
 let response = {
@@ -39,4 +39,4 @@ errorCode: 404
 
 */
 
-responseHandler(response);
+console.log(responseHandler(response));
