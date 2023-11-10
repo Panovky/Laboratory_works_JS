@@ -1,22 +1,22 @@
-let date_div = document.querySelector('.date-div');
+let date_div = document.querySelector('#date-div');
 let input = document.querySelector('input');
-let modal_div = document.querySelector('.modal-div');
+let modal_div = document.querySelector('#modal-div');
 let p = document.querySelector('p');
 let button = document.querySelector('button');
 
 input.onchange = function() {
     let [year, month, day] = input.value.split('-');
-    let date = +new Date(year, month - 1, day)
+    let date = +new Date(+year, month - 1, +day)
     let new_year = +new Date(2024, 0);
 
     if (date < new_year) {
-        p.textContent = `Дней осталось до Нового года: ${(new_year - date) / (1000 * 3600 * 24)}`;
+        p.innerHTML = `Дней осталось до Нового года: ${(new_year - date) / (1000 * 3600 * 24)}`;
     }
     else if (date == new_year) {
-        p.textContent = 'Ураа, Новый год!';
+        p.innerHTML = 'Ураа, Новый год!';
     }
     else {
-        p.textContent = `Дней прошло после Нового года: ${(date - new_year) / (1000 * 3600 * 24)}`;
+        p.innerHTML = `Дней прошло после Нового года: ${(date - new_year) / (1000 * 3600 * 24)}`;
     }
 
     date_div.style.display = 'none';

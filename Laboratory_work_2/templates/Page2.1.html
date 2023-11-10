@@ -9,13 +9,7 @@
         body {
             background-color: #2e2c2c;
             color: white;
-        }
-
-        div {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            height: 100vh;
         }
 
         p {
@@ -23,23 +17,15 @@
             font-weight: 600;
         }
 
-        .btn {
-            width: 60%;
-            margin-right: auto;
-            margin-left: auto;
-        }
-
-        .btn span {
+        button span {
             font-size: 20pt;
         }
     </style>
 </head>
-<body>
+<body class="d-flex flex-column justify-content-center align-items-center">
 
-<div class="d-flex flex-column">
-    <p class="text-center">Количество кликов мыши: <span></span></p>
-    <button class="btn btn-success"><span>Кликни по мне</span></button>
-</div>
+<p class="text-center">Количество кликов мыши: <span></span></p>
+<button class="btn btn-success"><span>Кликни по мне</span></button>
 
 <script type="text/javascript" src="../js/Module_2.1.js"></script>
 <script crossorigin="anonymous"

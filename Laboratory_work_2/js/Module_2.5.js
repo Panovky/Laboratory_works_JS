@@ -5,7 +5,6 @@ select.onchange = function() {
     let category = select.value;
 
     if (category == 'all-cats') {
-        console.log(0);
         divs.forEach(function(div) {
             div.style.display = 'flex';
         });
