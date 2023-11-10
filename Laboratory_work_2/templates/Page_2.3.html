@@ -16,6 +16,9 @@
     label, p {
         font-size: 28pt;
         font-weight: 600;
+    }
+
+    label {
         margin-right: 20px;
     }
 
@@ -29,34 +32,34 @@
         text-align: center;
     }
 
-    .modal-div {
+    #modal-div {
         display: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         background-color: #1f573d;
         border-radius: 10px;
         padding: 30px;
     }
 
-    .btn {
+    button {
         padding-right: 30px;
         padding-left: 30px;
+    }
+
+    button span {
         font-size: 20pt;
         font-weight: 600;
+        color: #1f573d;
     }
 </style>
 <body class="d-flex flex-column justify-content-center align-items-center">
 
-<div class="modal-div">
+<div id="modal-div">
     <p class="text-center"></p>
     <div class="d-flex justify-content-end">
-        <button class="btn btn-light">ОК</button>
+        <button class="btn btn-light"><span>ОК</span></button>
     </div>
 </div>
 
-<div class="date-div">
+<div id="date-div">
     <label for="date">Выберите дату</label>
     <input id="date" type="date">
 </div>
