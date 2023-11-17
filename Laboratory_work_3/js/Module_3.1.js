@@ -43,7 +43,7 @@ btnLookPhotos.addEventListener('click', () => {
 
     fetch(url)
         .then(response => {
-            if (!(response.status == 200)) {
+            if (response.status != 200) {
                 show_message(`Что-то пошло не так. Код ошибки: ${response.status}`);
                 return;
             }
