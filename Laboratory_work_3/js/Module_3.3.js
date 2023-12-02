@@ -1,13 +1,23 @@
 const api_key = 'OmC7i2tfmsVnm6M7UnYdhemDEOfcmFI3';
-const q = 'cat';
+const query = 'student';
 const limit = 100;
 
-$(document).ready(() => {
-    $.get(`https://api.giphy.com/v1/stickers/search/?q=${q}&limit=${limit}&api_key=${api_key}`, response => {
-        $('span').html(q);
-        $.each(response.data, (index, sticker) => {
-            $('body').append(`<img src="${sticker.images.original.url}" width="25%">`);
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelector('span').innerHTML = query;
 
+    $.get(`https://api.giphy.com/v1/stickers/search/?q=${query}&limit=${limit}&api_key=${api_key}`, (response, status) => {
+        let stickers = response.data;
+
+        if (status != 'success') {
+            return;
+        }
+
+        stickers.forEach(sticker => {
+            let img = document.createElement('img');
+            img.src = sticker.images.original.url;
+            img.style.width = "25%";
+            document.body.append(img);
         });
     });
 });
+
