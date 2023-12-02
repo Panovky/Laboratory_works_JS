@@ -1,9 +1,9 @@
 const mainModal = document.querySelector('#main-modal');
-mainModal.style.display = 'flex';
 const searchInput = document.querySelector('[name=search]');
 const messageModal = document.querySelector('#message-modal');
 const messageP = document.querySelector('#message');
 const btnMessage = document.querySelector('#btn-message');
+const key = 'ad9d42f2c1af4283a06241901f4c9565';
 
 function get_html_recipe(recipe_obj) {
     let recipe = document.createElement('div');
@@ -19,7 +19,6 @@ function get_html_recipe(recipe_obj) {
 
     recipe.appendChild(title);
     recipe.appendChild(img);
-
     return recipe;
 }
 
@@ -34,13 +33,8 @@ btnMessage.addEventListener('click', () => {
     mainModal.style.display = 'flex';
 })
 
-searchInput.addEventListener('change', () => {
-    const key = 'ad9d42f2c1af4283a06241901f4c9565';
-    let query = searchInput.value.trim();
-    let url = `https://api.spoonacular.com/recipes/complexSearch?number=20&apiKey=${key}`
-    if (query) {
-        url += `&query=${query}`;
-    }
+function get_recipes(query) {
+    let url = `https://api.spoonacular.com/recipes/complexSearch?number=20&apiKey=${key}&query=${query}`
 
     let xhr = new XMLHttpRequest();
     xhr.open('GET', url);
@@ -65,6 +59,14 @@ searchInput.addEventListener('change', () => {
     xhr.onerror = function () {
         show_message('Не удалось выполнить запрос.');
     };
+}
+
+searchInput.addEventListener('change', () => {
+    let query = searchInput.value.trim();
+
+    if (query) {
+        get_recipes(query);
+    }
 });
 
 

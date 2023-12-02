@@ -7,6 +7,8 @@ const btnOK = document.querySelector('#message-modal button');
 const carousel = document.querySelector('#carousel');
 const carousel_inner = document.querySelector('.carousel-inner');
 
+const backwardBtn = document.querySelector('#backward-btn');
+
 function show_photos(photos) {
     for (let i = 0; i < photos.length; i++) {
         let div = document.createElement('div');
@@ -22,6 +24,7 @@ function show_photos(photos) {
 
     mainModal.style.display = 'none';
     carousel.style.display = 'block';
+    backwardBtn.style.display = 'block';
 }
 
 function show_message(message) {
@@ -43,6 +46,7 @@ btnLookPhotos.addEventListener('click', () => {
 
     fetch(url)
         .then(response => {
+
             if (response.status != 200) {
                 show_message(`Что-то пошло не так. Код ошибки: ${response.status}`);
                 return;
@@ -59,4 +63,8 @@ btnLookPhotos.addEventListener('click', () => {
 btnOK.addEventListener('click', () => {
     messageModal.style.display = 'none';
     mainModal.style.display = 'block';
+});
+
+backwardBtn.addEventListener('click', () => {
+    document.location.reload();
 });
