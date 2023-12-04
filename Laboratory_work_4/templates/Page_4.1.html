@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Алгоритм Drag'n'Drop</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet">
+    <style>
+        body {
+            background-color: #2e2c2c;
+            color: white;
+            height: 100vh;
+        }
+
+        .icons__item {
+            width: 300px;
+            cursor: move;
+        }
+
+        .areas__item {
+            width: 300px;
+            height: 300px;
+            margin: 30px;
+            border: 1px solid white;
+            box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+
+        .areas__item__title {
+            font-size: 24pt;
+            font-weight: 600;
+            cursor: default;
+            z-index: -1;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .hovered {
+            border: 2px solid white;
+            box-shadow: 5px 5px 20px rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        #message-modal {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #5d5b5b;
+            border-radius: 10px;
+            border: 1px solid white;
+            box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.3);
+            font-size: 18pt;
+            padding: 30px;
+            display: none;
+        }
+
+        #message-modal img {
+            width: 500px;
+            border-radius: 10px;
+        }
+
+        #message-modal img:first-child {
+            margin-right: 15px;
+        }
+
+        #message-modal img:last-child {
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column justify-content-center align-items-center">
+
+<div class="icons d-flex justify-content-center">
+    <img class="icons__item" data-character="nezuko" src="../images/nezuko.gif" alt="Незуко Камадо">
+    <img class="icons__item" data-character="tanjiro" src="../images/tanjiro.gif" alt="Танжиро Камадо">
+    <img class="icons__item" data-character="zenitsu" src="../images/zenitsu.gif" alt="Зеницу Агацума">
+</div>
+
+<div class="areas d-flex justify-content-center">
+    <div class="areas__item d-flex justify-content-center align-items-center" data-character="nezuko">
+        <p class="areas__item__title">Незуко Камадо</p>
+    </div>
+
+    <div class="areas__item d-flex justify-content-center align-items-center" data-character="zenitsu">
+        <p class="areas__item__title">Зеницу Агацума</p>
+    </div>
+
+    <div class="areas__item d-flex justify-content-center align-items-center" data-character="tanjiro">
+        <p class="areas__item__title">Танжиро Камадо</p>
+    </div>
+</div>
+
+<div id="message-modal">
+    <div class="d-flex justify-content-end align-items-center">
+        <button class="btn btn-outline-light">X</button>
+    </div>
+    <p>Ты прекрасно справился!</p>
+    <div class="d-flex justify-content-between">
+        <img src="../images/victory1.jpeg" alt="Рука Рэнгоку">
+        <img src="../images/victory2.jpeg" alt="Кёджуро Рэнгоку">
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/Module_4.1.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
