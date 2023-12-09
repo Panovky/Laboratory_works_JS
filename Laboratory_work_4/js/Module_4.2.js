@@ -67,8 +67,8 @@ function showVictory() {
 }
 
 document.addEventListener('keydown', (e) => {
+    clearTimeout(timerId);
     if (e.key == letter) {
-        clearTimeout(timerId);
         points++;
         document.querySelector('.key').classList.add('green');
         setTimeout(() => { points == 10 ? showVictory() : createKey(); }, 500);
